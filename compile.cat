@@ -1,1 +1,0 @@
-cc Csrc.c -o Cexe -Wall -Werror -Wpedantic -lncurses -DNCURSES_STATIC 
