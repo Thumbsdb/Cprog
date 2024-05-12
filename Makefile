@@ -1,10 +1,33 @@
 #comment
-CC = cc
+CC = gcc
 
-SRC = Cprog.c
-OBJ = ${SRC:.c=.o}
+SRC = ./Src/Csrc.c
+CEL = ./Src/Celsius.c
+LIN = ./Src/Lines.c
+MAT = ./Src/Maths.c
+GUI = ./Src/GUI.c
 
-all: Prog
+OBJ = ${SRC:.c=}
+OCL = ${CEL:.c=}
+OLI = ${LIN:.c=}
+OMA = ${MAT:.c=}
+OGU = ${GUI:.c=}
+
+SAFTEY = -Wall -Werror -Wpedantic -lncurses -DNCURSES_STATIC
+
+all: Prog Celsius Lines Maths Gui
 
 Prog:
-	${CC} -o $@ ${OBJ} ${SRC}
+	${CC} ${SRC} -o ${OBJ} ${SAFTEY}
+
+Celsius:
+	${CC} ${CEL} -o ${OCL}
+
+Lines:
+	${CC} ${LIN} -o ${OLI}
+
+Maths:
+	${CC} ${MAT} -o ${OMA}
+
+Gui:
+	${CC} ${GUI} -o ${OGU}
