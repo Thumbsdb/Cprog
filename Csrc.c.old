@@ -1,0 +1,200 @@
+//single line comment
+/*
+* Multi Line comment
+ */
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+void myFunction(char name[], int age ) {
+	printf("%s %d \n", name, age);
+}
+
+void Fun(int Num[5]) {
+	for (int i=0;i<5;i++){
+		printf("%d\n",Num[i]);
+	}
+}
+
+int Maths(int x, int y) {
+	return x+y;
+
+}
+
+int sum(int k) {
+  if (k > 0) {
+    return k + sum(k - 1);
+  } else {
+    return 0;
+  }
+}
+
+struct MyStructure { 	// Structure declaration
+	int myNum; 	// Member (int variable)
+	char myLetter;	// Member (char variable)
+}; // End of the structure with a semicolons
+
+enum Level {
+	LOW = 1,
+	MEDIUM = 2,
+	HIGH = 3,
+};
+
+int main() {
+
+int d; char Let = 'A'; float Float = 6.9; int a=10; int b=5; int* ptr =  &b;//float sum = (float) 5 / 2;int MyNum;char MyChar[10];
+
+enum Level MyVar = MEDIUM;
+
+ switch (MyVar) {
+	case 1:
+	   printf("L");
+	   break;
+	case 2:
+	   printf("M");	
+  	   break;
+	case 3:
+	   printf("H");
+	   break;
+ }
+
+//Structures
+//Creat a structure variable of MySturcute called s1
+struct MyStructure s1 = {13, 'B'};
+struct MyStructure s2;
+
+s2 = s1; 
+
+/*Addign values to members of s1
+s1.myNum = 13;
+s1.myLetter = 'B';
+
+//Addign values to members of s2
+s2.myNum = 13;
+s2.myLetter = 'B'; */
+
+//Print values
+printf("%d %c", s1.myNum, s1.myLetter);
+printf("%d %c", s2.myNum, s2.myLetter);
+
+
+//Files and crap
+FILE *fptr;
+//Create a file
+fptr = fopen("filename.txt", "w"); // Opens file in write mode
+	fprintf(fptr, "Line 0 \n"); //Write to filename.txt
+fclose(fptr); //Close the file
+
+//Append file 
+fptr = fopen("filename.txt", "a"); //Opens file in append mode
+	fprintf(fptr,"Line 1\n"); //Appends text to filename.txt
+fclose(fptr); //Close the file
+
+
+//Prints contents to the screen
+fptr = fopen("filename.txt", "r"); //Opens file in read mode
+
+//Store the contents of the file
+char myString[100];
+	while( fgets(myString, 100, fptr)) { //I have to use fget to the contents of the file
+		printf("%s", myString);
+	}	
+fclose(fptr);
+
+/*(printf("%f\n", sqrt(16));
+printf("%f\n", ceil(1.4));
+printf("%f\n", floor(1.4));
+printf("%f\n", pow(4,3)); */
+//custom functions
+int Num[5]={1,2,3,4,5};
+Fun(Num);
+
+myFunction("Chris", 3);
+
+int result0 = Maths(5,3);
+printf("%d\n", result0);
+
+int result1 = sum(10);
+printf("%d\n", result1);
+
+//User input
+
+/*printf("Type Number: ");
+scanf("%d", &MyNum);
+printf("Your Number: %d\n", MyNum);
+printf("Type Character(Max 10 Characters):  ");
+scanf("%s", &MyChar);
+printf("Your Char: %s\n", MyChar);
+
+printf("%p\n%p\n", &MyNum, &MyChar);
+printf("%p\n", ptr);
+
+int myNumbers[4]= {25,50,75,10};
+int i;
+
+for (i=0;i<4;i++) {
+	printf("%p\n", &myNumbers[i]);
+} */
+
+
+
+//While loops  th print text and number b
+/*while(a>=b){
+	if(b==7){
+		b++;
+		continue;
+	}
+	printf("\"This dog is a girl so technically I slept with a woman\"\t-\tAlex\n");
+	printf("%d\n",b);
+	b++;
+}
+//Prints Int Character Float and size of
+	printf("Int:%d Char:%c Float:%.2f \n", a+b , Let , Float);
+	printf("5 divided by 2 = %.1f\n", sum);
+	printf("%d", a>b);
+	printf("%lu\n", sizeof(Float));
+
+//Print if a is bigger than b
+(a>b) ? printf ("A is bigger than B\n") : printf ("B is bigger than A\n"); */
+
+/*int c[] = {1,2,3,4,5};
+
+while(d < 5){
+	printf("%d\n",c[d]);
+	d++;
+}
+
+int matrix[2][3] = { {1,4,2}, {3,8,6} };
+
+d = 0;
+	printf("      Column 0  Column 1  Column 2\n");
+	printf("Row 0: ");
+while(d<3){
+	printf("   %d\t",matrix[0][d]);
+	d++;
+}
+d = 0;
+printf("\n");
+printf("Row 1: ");
+while(d<3){
+	printf("   %d\t",matrix[1][d]);
+	d++;
+}
+printf("\n");
+*/
+
+
+/*char greetings[] = "Hello ";
+char greetings1[] = "World!";
+Concatenate strings
+strcat(greetings, greetings1);
+
+int i;
+for(i=0;i<strlen(greetings);i++){
+	printf("%c\n", greetings[i]);
+	}
+*/
+
+return 0;
+}
+

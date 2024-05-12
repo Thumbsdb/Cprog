@@ -1,0 +1,11 @@
+Do it section for an hr then half break
+Make a VERY basic calcualor app cli
+Learn how to use MAKEFILES
+Make the basic gui app
+Transfer the basic cli to a basic gui app
+git ify
+Draw up what th gui calcuator app should be + menus
+Go MAD
+Make better calcualtor app
+Idk make new project 
+Serial thing?
